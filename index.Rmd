@@ -24,9 +24,9 @@ If that doesn't work out, I am also interested in analyzing what behavioral nudg
 
 library(tidyverse)
 library(ggplot2)
-read_csv("/Users/carolynburger/Desktop/Gov 50 Final Project /foxnews.csv")
+fox <- read_csv("/Users/carolynburger/Desktop/Gov 50 Final Project /foxnews.csv")
 
-
+fox 
 
 ```
 
