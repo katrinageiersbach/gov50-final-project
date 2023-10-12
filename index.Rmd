@@ -30,9 +30,27 @@ fox
 
 ```
 
+State your research question.
+
+Are certain racial groups, income levels, or levels of educational attainment more likely to subscribe to Fox News Media? Further, as a second part of my research question, I will investigate whether or not conspiracy theory belief is correlated to Fox Media News subscription. Ultimately, I aim to investigate the demographic breakdown of Fox News Media subscribers to determine what demographics are most likely to buy into political conspiracy theories. 
+
+Formulate a hypothesis related to the research question. This hypothesis should be rooted in some sort of theory. In other words, you need to present a plausible story why the hypothesis might be true. Often, this is in the form of a behaviorial or institutional explanation. As social scientists, we are not interested in idiosyncratic explanations; we want to understand systematic patterns and relationships!
+
+
+To answer the first part of my research question, I believe that predominantly white citizens and lower educational attainment will be more likely to subscribe to Fox News Media. I do not think there will be a pattern or relationship with income level. I belive more white citizens will subscribe to Fox News because according to the PEW Research Center (2022), around 85% of the Republican party is white, and Fox News tends to lean conservative. Secondly, I am not sure income level will correlate with Fox News Media subscription. Higher income individuals will have more access to television and news media soures, but they may be equally inclined to subscribe to CNN instead (a liberal leaning platform). I am very eager to investigate whether or not a relationship exists here. Lastly, I think that lower educational attainment (though this is just suspicion, because reverse causality could certainly be at play here) may be correlated with Fox News Subscription based on a study from the 2016 election that found that "President Trump won voters with less than a college education, while Hillary Clinton won among voters with a college degree – and in the two years since the election, their choice for their news source follows this pattern as well" (Public Opinion Strategies, 2019).
+
+(Prooijen 2017)
+
+Describe your explanatory variable(s) of interest and how it is measured. Importantly, we need to observe variation in this variable in order to study it!
+
+
+Describe your outcome variable of interest and how it is measured.
 
 
 
+What observed pattern in the data would provide support for your hypothesis? More importantly, what observed pattern would disprove your hypothesis?
+
+Does unified government enhance legislative productivity? In this study, I plan to examine the extent to which periods of unified government produce more landmark laws. I hypothesize that legislative productivity increases during periods of unified government in which one party controls both Houses of Congress and the presidency relative to periods of divided government. During periods of unified government, I expect that it is more likely for major bills to pass both Houses and gain the president’s signature. During periods of divided government, it is more difficult to reach a consensus around legislation that can pass each House and gain the president’s approval. My sample is comprised of each of the 79th (1945-1946) through 103rd (1993-1994) Congresses. My unit of analysis is a Congress (e.g., the 88th Congress). The explanatory variable of interest is whether there is unified government (both Houses and the presidency are controlled by the same party) or divided government. The variable is coded =1 for unified government and =0 for divided government. My outcome variable is the count of landmark pieces of legislation passed in a given Congress. For instance, if the variable were coded =11, it would mean that 11 pieces of landmark legislation were signed into law in that Congress. This variable is measured from David Mayhew’s data set on landmark legislation and relies on Mayhew’s expert knowledge to classify legislation as “landmark.” If I observe greater landmark legislative productivity under unified government relative to divided government, this would provide support for my hypothesis. If, on the other hand, I observe less productivity or the same level of productivity under unified government, this would provide evidence against my hypothesis. When I run my regression of the count of landmark legislation on the unified government indicator variable, a positive, significant coefficient would indicate support for my hypothesis.
 
 
 
