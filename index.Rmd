@@ -16,3 +16,24 @@ I am interested in potentially exploring data related to climate change, natural
 I am eager to investigate the relationship between government and economic policy in handling global crises related to climate change. The fires in Maui are an interest area for me, though I'm not sure enough data will be published yet. 
 
 If that doesn't work out, I am also interested in analyzing what behavioral nudges are most effective to mobilize populations to vote, especially in under served communities. 
+
+
+
+
+```{r}
+
+library(tidyverse)
+library(ggplot2)
+read_csv("/Users/carolynburger/Desktop/Gov 50 Final Project /foxnews.csv")
+
+
+
+```
+
+
+
+
+
+
+
+
