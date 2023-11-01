@@ -52,3 +52,33 @@ Share of Fox News subscribers in 2000. This is measured using Fox News data from
 An observed pattern in the data that would provide support for my hypothesis is that Black and Hispanic populations subscribe to Fox News Media in varying levels, indicating that subscription does vary by race. If there is no difference in subscription levels across race, my hypothesis would be incorrect. Secondly, if citizens with lower education subscribe to Fox News with more frequency than citizens with higher education, my hypothesis would be correct. If the reverse is true, or if there is no correlation at all, I would be incorrect. Lastly, I do not think there will be a correlation on the basis of income-- I am eager to see if I am incorrect, though (I definitely think it is possible that income levels may impact subscription, as income is often a tight correlate with education). The second part of my project will connect these demographic findings to conspiracy theories. I plan to locate another data set that I can merge into this one to discover whether or not Fox News Subscription can impact conspiracy theory belief, and in turn, can draw conclusions about what demographics are most susceptible to these theories. 
 
 
+
+Final Project Milestone #3: 
+
+```{r}
+
+
+library(tidyverse)
+library(ggplot2)
+fox <- read_csv("/Users/carolynburger/Desktop/Gov 50 Final Project /foxnews.csv")
+
+scatterplot1 <- fox |>
+  mutate(
+Education = if_else(college1990 > .5,"High Education Population", "Low Education Population")) |>
+  group_by(income1990, college1990) |>
+  ggplot(mapping = aes(x = income1990, y = subrf2000, color = college1990)) + geom_point(mapping = aes(color = Education)) + labs(
+    x = "Median Income in 1990", 
+    y = "Share of Fox News Subscribers in 2000", title = "Share of Fox News Subscribers on the Basis of Income and Education"
+  )
+scatterplot1
+  
+  
+  
+
+```
+
+
+
+
+
+
