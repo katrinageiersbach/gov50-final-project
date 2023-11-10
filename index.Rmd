@@ -82,3 +82,20 @@ scatterplot1
 
 
 
+```{r}
+library(tidyverse)
+wb <- read_csv("Data/wb.csv")
+```
+```{r}
+library(reshape2)
+wb<- wb |>
+  gather(key=year, value=value, "2013": "2022", factor_key = F) |>
+  dcast(country + country_code + year ~ var, value.var= "value") |>
+  mutate(year = as.numeric(year))
+wb
+
+```
+
+
+
+
