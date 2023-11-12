@@ -96,6 +96,25 @@ wb
 
 ```
 
+```{r}
+library(ggplot2)
+
+scatterplot2 <- wb |>
+  filter(country == "United States") |>
+  group_by(Education, Gov) |>
+  ggplot(mapping = aes(x = Education, y = Emission, color = Gov)) + geom_point(mapping = aes(color = Education)) + labs(
+    x = "Educational attainment, population 25+, total (%) (cumulative)", 
+    y = "CO2 emissions (kg per 2015 US$ of GDP)", title = "Relationship between Educational Attainment and Government Effectiveness on C02 Emissions, U.S.A"
+  )
+scatterplot2
+
+
+
+```
+
+
+
+
 
 
 
