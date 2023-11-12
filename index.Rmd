@@ -92,7 +92,6 @@ wb<- wb |>
   gather(key=year, value=value, "2013": "2022", factor_key = F) |>
   dcast(country + country_code + year ~ var, value.var= "value") |>
   mutate(year = as.numeric(year))
-wb
 
 ```
 
