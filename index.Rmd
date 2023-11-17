@@ -111,9 +111,111 @@ scatterplot2
 
 ```
 
+Milestone 4: 
+
+Regression Analysis 
+
+Key variables definitions and scales/units: 
+
+GDP: GDP (constant 2015 US$)
+Scale: Long definition	GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2015 prices, expressed in U.S. dollars. Dollar figures for GDP are converted from domestic currencies using 2015 official exchange rates. For a few countries where the official exchange rate does not reflect the rate effectively applied to actual foreign exchange transactions, an alternative conversion factor is used.
+
+Education: Educational attainment, at least completed short-cycle tertiary, population 25+, total (%) (cumulative)
+Scale : Statistical concept and methodology	It is calculated by dividing the number of population ages 25 and older who attained or completed short-cycle tertiary education by the total population of the same age group and multiplying by 100. 
+
+Gov: Government Effectiveness: Estimate (Government Effectiveness captures perceptions of the quality of public services, the quality of the civil service and the degree of its independence from political pressures, the quality of policy formulation and implementation, and the credibility of the government's commitment to such policies)
+
+Scale: [-2.5,2.5]
+
+Climate: Droughts, floods, extreme temperatures (% of population, average 1990-2009)
+Scale: 	Droughts, floods, extreme temperatures (% of population, average 1990-2009)
+Long definition	Droughts, floods and extreme temperatures is the annual average percentage of the population that is affected by natural disasters classified as either droughts, floods, or extreme temperature events. A drought is an extended period of time characterized by a deficiency in a region's water supply that is the result of constantly below average precipitation. A drought can lead to losses to agriculture, affect inland navigation and hydropower plants, and cause a lack of drinking water and famine. A flood is a significant rise of water level in a stream, lake, reservoir or coastal region. Extreme temperature events are either cold waves or heat waves. A cold wave can be both a prolonged period of excessively cold weather and the sudden invasion of very cold air over a large area. Along with frost it can cause damage to agriculture, infrastructure, and property. A heat wave is a prolonged period of excessively hot and sometimes also humid weather relative to normal climate patterns of a certain region. Population affected is the number of people injured, left homeless or requiring immediate assistance during a period of emergency resulting from a natural disaster; it can also include displaced or evacuated people. Average percentage of population affected is calculated by dividing the sum of total affected for the period stated by the sum of the annual population figures for the period stated.
+
+Pop_growth: Population growth (annual %)
+
+Pop: Population, total
+
+Emissions (dependent variable): CO2 emissions (kg per 2015 US$ of GDP)
+Scale: Carbon dioxide emissions are those stemming from the burning of fossil fuels and the manufacture of cement. They include carbon dioxide produced during consumption of solid, liquid, and gas fuels and gas flaring.
+
+Sources: MetaData Glossary World Bank
+
+https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SE.TER.CUAT.ST.FE.ZS#:~:text=It%20is%20calculated%20by%20dividing,group%20and%20multiplying%20by%20100.
 
 
-New Graph 
+Research Question: To what extent does Government Effectiveness, that is, perceptions of the quality of public services, the quality of the civil service and the degree of its independence from political pressures, the quality of policy formulation and implementation, and the credibility of the government's commitment to such policies, impact C02 emissions? Ultimately, after many rounds of changed research and data sets, I've decided I am interested in exploring whether or not the effectiveness of a particular government institution may impact how climate conscious a particular country is, and how C02 emissions may vary depending on differing levels of government effectiveness. I want to control for several potential confounders, though. Aside from government effectiveness, I believe that population growth, educational attainment levels, and GDP may all be factors that could impact C02 emissions regardless of government effectiveness level. Population growth might lead to increased vehicle use, and therefore more C02 emissions; higher educational attainment may yield more educated conservation practices to limit carbon footprints; and GDP may impact the ability of a particular government to invest in climate conscious, renewable, or sustainable energy alternatives. My results and initial interpretations/analyses are reflected below. 
+
+Regression #1:
+
+```{r}
+
+mult.fit <- lm(Emission ~ Gov + Education, data = wb)
+mult.fit
+
+library(texreg)
+
+texreg(mult.fit)
+
+plotreg(mult.fit)
+
+screenreg(mult.fit)
 
 
+```
 
+.26710: The average CO2 emissions with 0 educational attainment (population 25+) and an effective government score of 0, is .26710 kg per 2015 US$ of GDP. This result is statistically significant. 
+
+-.23291: The average decrease in C02 Emissions for an additional unit increase of government effectiveness, holding educational attainment (age 25+) level constant, is -.23291 kg per 2015 US$ of GDP. This result is statistically significant. 
+
+0.01002: The average increase in C02 Emissions for each additional unit increase in educational attainment (population 25+), holding government effectiveness constant, is 0.01002 kg per 2015 US$ of GDP. This result is statistically significant. 
+
+My second regression, a multivariate regression this time, is shown below: 
+
+Regression #2
+```{r}
+mult.fit2 <- lm(Emission ~ Gov + Pop_growth + Education + Gdp, data = wb)
+mult.fit2
+
+summary(mult.fit2)
+
+texreg(mult.fit2)
+
+plotreg(mult.fit2)
+
+screenreg(mult.fit2)
+```
+
+Multivariate regression here: 
+
+3.263e-01: Average CO2 emissions with 0 educational attainment (population 25+), an effective government score of 0, population growth of 0, and a GDP of 0, is 3.263e-01 kg per 2015 US$ of GDP.  This result is statistically significant. 
+ 
+ -2.442e-01: The average decrease in C02 Emissions for an additional unit increase of government effectiveness, holding educational attainment (age 25+) level, population growth, and GDP constant, is -2.442e-01 kg per 2015 US$ of GDP. This result is statistically significant. 
+ 
+ -5.195e-02: The average increase in C02 Emissions for each additional unit increase in population growth percentage, holding educational attainment (population 25+), government effectiveness, and GDP constant, is -5.195e-02 kg per 2015 US$ of GDP. This result is statistically significant.   
+ 
+ 9.944e-03: The average increase in C02 Emissions for each additional unit increase in educational attainment (population 25+), holding government effectiveness, population growth, and GDP constant, is 9.944e-03 kg per 2015 US$ of GDP.  This result is statistically significant. 
+ 
+ -7.714e-15: The average decrease in C02 Emissions for each additional unit increase in GDP, holding educational attainment (population 25+), government effectiveness, and population growth constant, is -7.714e-15 kg per 2015 US$ of GDP.  This result is not statistically significant. 
+
+
+Regression #3:
+
+I also wanted to look at whether or not this relationship holds over time in the United States:
+
+```{r}
+wb_usa <- wb |>
+  filter(country_code == "USA") 
+  
+  mult.fit3 <- lm(Emission ~ Gov + Pop_growth + Education + Gdp, data = wb_usa)
+  summary(mult.fit3)
+   
+  
+texreg(mult.fit3)
+
+plotreg(mult.fit3)
+
+screenreg(mult.fit3)
+
+  
+```
+None of these results are statistically significant. I have a larger p value here, which may be a result of having fewer observations. The estimation is not precise because we have fewer observations: we only have 10 years of data/10 observations. 
