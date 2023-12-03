@@ -145,7 +145,7 @@ https://databank.worldbank.org/metadataglossary/world-development-indicators/ser
 
 Research Question: To what extent does Government Effectiveness, that is, perceptions of the quality of public services, the quality of the civil service and the degree of its independence from political pressures, the quality of policy formulation and implementation, and the credibility of the government's commitment to such policies, impact C02 emissions? Ultimately, after many rounds of changed research and data sets, I've decided I am interested in exploring whether or not the effectiveness of a particular government institution may impact how climate conscious a particular country is, and how C02 emissions may vary depending on differing levels of government effectiveness. I want to control for several potential confounders, though. Aside from government effectiveness, I believe that population growth, educational attainment levels, and GDP may all be factors that could impact C02 emissions regardless of government effectiveness level. Population growth might lead to increased vehicle use, and therefore more C02 emissions; higher educational attainment may yield more educated conservation practices to limit carbon footprints; and GDP may impact the ability of a particular government to invest in climate conscious, renewable, or sustainable energy alternatives. My results and initial interpretations/analyses are reflected below. 
 
-Regression #1:
+## Regression #1 Testing the Relationship between Emissions and Government Effectiveness, Holding Education Constant:
 
 ```{r}
 
@@ -190,7 +190,7 @@ modelsummary::modelsummary(
 
 My second regression, a multivariate regression this time, is shown below: 
 
-Regression #2
+## Regression #2 Testing the Relationship between Emissions and Government Effectiveness, Holding Education, Population Growth, and GDP Constant:
 ```{r}
 mult.fit2 <- lm(Emission ~ Gov + Pop_growth + Education + Gdp, data = wb)
 mult.fit2
@@ -239,9 +239,7 @@ Multivariate regression here:
  -7.714e-15: The average decrease in C02 Emissions for each additional unit increase in GDP, holding educational attainment (population 25+), government effectiveness, and population growth constant, is -7.714e-15 kg per 2015 US$ of GDP.  This result is not statistically significant. 
 
 
-Regression #3:
-
-I also wanted to look at whether or not this relationship holds over time in the United States:
+## Regression #3: Testing the Relationship between Emissions and Government Effectiveness, Holding Education, Population Growth, and GDP Constant; does this relationship hold over time in the United States? 
 
 ```{r}
 wb_usa <- wb |>
