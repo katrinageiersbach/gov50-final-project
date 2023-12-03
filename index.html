@@ -11,7 +11,7 @@
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
   body {
-    visibility: hidden; 
+    visibility: hidden;
   }
   </style>
 
@@ -1473,6 +1473,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="index_files/header-attrs-2.25/header-attrs.js"></script>
+  <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="index_files/popper-2.6.0/popper.min.js"></script>
   <link href="index_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1689,6 +1691,113 @@ Adj. R^2       0.33
 Num. obs.    383       
 =======================
 *** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://modelsummary.com'>modelsummary</a></span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>mult.fit</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 3 × 5
+  term        estimate std.error statistic  p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)   0.267    0.0280       9.54 1.72e-19
+2 Gov          -0.233    0.0169     -13.8  1.98e-35
+3 Education     0.0100   0.00120      8.34 1.34e-15</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>map</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span></span>
+<span>  <span class='st'>"Emission"</span> <span class='op'>=</span> <span class='st'>"C02 Emissions"</span>, </span>
+<span>  <span class='st'>"Gov"</span> <span class='op'>=</span> <span class='st'>"Government Effectiveness"</span>, </span>
+<span>  <span class='st'>"Education"</span> <span class='op'>=</span> <span class='st'>"Educational Attainment"</span></span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span></span>
+<span>  <span class='va'>mult.fit</span>,</span>
+<span>  coef_map <span class='op'>=</span> <span class='va'>map</span>,</span>
+<span>  statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"s.e. = {std.error}"</span>,</span>
+<span>                <span class='st'>"p = {p.value}"</span><span class='op'>)</span>,</span>
+<span>  gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span></span>
+<span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+ (1)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Government Effectiveness
+</td>
+<td style="text-align:center;">
+−0.233
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.017
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Educational Attainment
+</td>
+<td style="text-align:center;">
+0.010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1.5px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+383
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.334
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.331
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>.26710: The average CO2 emissions with 0 educational attainment (population 25+) and an effective government score of 0, is .26710 kg per 2015 US$ of GDP. This result is statistically significant.</p>
 <p>-.23291: The average decrease in C02 Emissions for an additional unit increase of government effectiveness, holding educational attainment (age 25+) level constant, is -.23291 kg per 2015 US$ of GDP. This result is statistically significant.</p>
@@ -1790,6 +1899,170 @@ Adj. R^2       0.36
 Num. obs.    383       
 =======================
 *** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>mult.fit2</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 5 × 5
+  term         estimate std.error statistic  p.value
+  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)  3.26e- 1  3.07e- 2     10.6  3.09e-23
+2 Gov         -2.44e- 1  1.69e- 2    -14.5  3.98e-38
+3 Pop_growth  -5.19e- 2  1.21e- 2     -4.28 2.41e- 5
+4 Education    9.94e- 3  1.18e- 3      8.40 9.04e-16
+5 Gdp         -7.71e-15  5.48e-15     -1.41 1.60e- 1</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>mult.fit2</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 5 × 5
+  term         estimate std.error statistic  p.value
+  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)  3.26e- 1  3.07e- 2     10.6  3.09e-23
+2 Gov         -2.44e- 1  1.69e- 2    -14.5  3.98e-38
+3 Pop_growth  -5.19e- 2  1.21e- 2     -4.28 2.41e- 5
+4 Education    9.94e- 3  1.18e- 3      8.40 9.04e-16
+5 Gdp         -7.71e-15  5.48e-15     -1.41 1.60e- 1</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>map</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span></span>
+<span>  <span class='st'>"Emission"</span> <span class='op'>=</span> <span class='st'>"C02 Emissions"</span>, </span>
+<span>  <span class='st'>"Gov"</span> <span class='op'>=</span> <span class='st'>"Government Effectiveness"</span>, </span>
+<span>  <span class='st'>"Education"</span> <span class='op'>=</span> <span class='st'>"Educational Attainment"</span>, </span>
+<span>  <span class='st'>"Pop_growth"</span> <span class='op'>=</span> <span class='st'>"Population Growth"</span>, </span>
+<span>  <span class='st'>"Gdp"</span> <span class='op'>=</span> <span class='st'>"GDP"</span></span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span></span>
+<span>  <span class='va'>mult.fit2</span>,</span>
+<span>  coef_map <span class='op'>=</span> <span class='va'>map</span>,</span>
+<span>  statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"s.e. = {std.error}"</span>,</span>
+<span>                <span class='st'>"p = {p.value}"</span><span class='op'>)</span>,</span>
+<span>  gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span></span>
+<span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+ (1)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Government Effectiveness
+</td>
+<td style="text-align:center;">
+−0.244
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.017
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Educational Attainment
+</td>
+<td style="text-align:center;">
+0.010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Population Growth
+</td>
+<td style="text-align:center;">
+−0.052
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.012
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GDP
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1.5px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+p = 0.160
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+383
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.369
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.362
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>Multivariate regression here:</p>
 <p>3.263e-01: Average CO2 emissions with 0 educational attainment (population 25+), an effective government score of 0, population growth of 0, and a GDP of 0, is 3.263e-01 kg per 2015 US$ of GDP. This result is statistically significant.</p>
@@ -1885,9 +2158,162 @@ Adj. R^2      0.99
 Num. obs.     6     
 ====================
 *** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>mult.fit3</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 5 × 5
+  term         estimate std.error statistic p.value
+  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)  3.38e+ 0  1.80e+ 0      1.88   0.311
+2 Gov         -9.95e- 1  6.85e- 1     -1.45   0.384
+3 Pop_growth  -7.77e- 1  4.97e- 1     -1.56   0.362
+4 Education    1.29e- 2  1.13e- 2      1.14   0.457
+5 Gdp         -9.10e-14  5.08e-14     -1.79   0.324</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>map</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span></span>
+<span>  <span class='st'>"Emission"</span> <span class='op'>=</span> <span class='st'>"C02 Emissions"</span>, </span>
+<span>  <span class='st'>"Gov"</span> <span class='op'>=</span> <span class='st'>"Government Effectiveness"</span>, </span>
+<span>  <span class='st'>"Education"</span> <span class='op'>=</span> <span class='st'>"Educational Attainment"</span>, </span>
+<span>  <span class='st'>"Pop_growth"</span> <span class='op'>=</span> <span class='st'>"Population Growth"</span>, </span>
+<span>  <span class='st'>"Gdp"</span> <span class='op'>=</span> <span class='st'>"GDP"</span></span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span></span>
+<span>  <span class='va'>mult.fit3</span>,</span>
+<span>  coef_map <span class='op'>=</span> <span class='va'>map</span>,</span>
+<span>  statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"s.e. = {std.error}"</span>,</span>
+<span>                <span class='st'>"p = {p.value}"</span><span class='op'>)</span>,</span>
+<span>  gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span></span>
+<span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+ (1)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Government Effectiveness
+</td>
+<td style="text-align:center;">
+−0.995
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.685
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.384
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Educational Attainment
+</td>
+<td style="text-align:center;">
+0.013
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.457
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Population Growth
+</td>
+<td style="text-align:center;">
+−0.777
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.497
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.362
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GDP
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1.5px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+p = 0.324
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.998
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.992
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>None of these results are statistically significant. I have a larger p value here, which may be a result of having fewer observations. The estimation is not precise because we have fewer observations: we only have 10 years of data/10 observations.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

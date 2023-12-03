@@ -160,6 +160,25 @@ plotreg(mult.fit)
 
 screenreg(mult.fit)
 
+library(broom)
+library(modelsummary)
+tidy(mult.fit)
+
+map = c(
+  "Emission" = "C02 Emissions", 
+  "Gov" = "Government Effectiveness", 
+  "Education" = "Educational Attainment"
+)
+
+modelsummary::modelsummary(
+  mult.fit,
+  coef_map = map,
+  statistic = c("s.e. = {std.error}",
+                "p = {p.value}"),
+  gof_map = c("nobs", "r.squared", "adj.r.squared")
+)
+
+
 
 ```
 
@@ -183,6 +202,28 @@ texreg(mult.fit2)
 plotreg(mult.fit2)
 
 screenreg(mult.fit2)
+
+tidy(mult.fit2)
+
+tidy(mult.fit2)
+
+map = c(
+  "Emission" = "C02 Emissions", 
+  "Gov" = "Government Effectiveness", 
+  "Education" = "Educational Attainment", 
+  "Pop_growth" = "Population Growth", 
+  "Gdp" = "GDP"
+)
+
+modelsummary::modelsummary(
+  mult.fit2,
+  coef_map = map,
+  statistic = c("s.e. = {std.error}",
+                "p = {p.value}"),
+  gof_map = c("nobs", "r.squared", "adj.r.squared")
+)
+
+
 ```
 
 Multivariate regression here: 
@@ -215,6 +256,25 @@ texreg(mult.fit3)
 plotreg(mult.fit3)
 
 screenreg(mult.fit3)
+
+
+tidy(mult.fit3)
+
+map = c(
+  "Emission" = "C02 Emissions", 
+  "Gov" = "Government Effectiveness", 
+  "Education" = "Educational Attainment", 
+  "Pop_growth" = "Population Growth", 
+  "Gdp" = "GDP"
+)
+
+modelsummary::modelsummary(
+  mult.fit3,
+  coef_map = map,
+  statistic = c("s.e. = {std.error}",
+                "p = {p.value}"),
+  gof_map = c("nobs", "r.squared", "adj.r.squared")
+)
 
   
 ```
