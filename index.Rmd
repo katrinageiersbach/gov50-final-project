@@ -8,84 +8,14 @@ output:
   
 ---
 
-
-## Project thoughts
-
-I am interested in potentially exploring data related to climate change, natural disaster relief (fires in Maui), and voter mobilization.
-
-I am eager to investigate the relationship between government and economic policy in handling global crises related to climate change. The fires in Maui are an interest area for me, though I'm not sure enough data will be published yet. 
-
-If that doesn't work out, I am also interested in analyzing what behavioral nudges are most effective to mobilize populations to vote, especially in under served communities. 
-
-
-
-
 ```{r}
 
-library(tidyverse)
-library(ggplot2)
-fox <- read_csv("/Users/carolynburger/Desktop/Gov 50 Final Project /foxnews.csv")
-
-fox 
-
-```
-
-Are certain racial groups, income levels, or levels of educational attainment more likely to subscribe to Fox News Media [in 2000]? Further, as a second part of my research question, I will investigate whether or not conspiracy theory belief is correlated to Fox Media News subscription. Ultimately, I aim to investigate the demographic breakdown of Fox News Media subscribers to determine what demographics are most likely to buy into political conspiracy theories. 
-
-
-To answer the first part of my research question, I believe that predominantly white citizens and lower educational attainment will be more likely to subscribe to Fox News Media. I do not think there will necessarily be a pattern or relationship with income level, though. I believe more white citizens will subscribe to Fox News because according to the PEW Research Center (2022), around 85% of the Republican party is white, and Fox News tends to lean conservative. Secondly, I am not sure income level will correlate with Fox News Media subscription. Higher income individuals will have more access to television and news media sources, but they may be equally inclined to subscribe to CNN instead (a liberal leaning platform). I am very eager to investigate whether or not a relationship exists here, though. Lastly, I think that lower educational attainment (though this is just suspicion, because reverse causality could certainly be at play here) may be correlated with Fox News Subscription based on a study from the 2016 election that found that "President Trump won voters with less than a college education, while Hillary Clinton won among voters with a college degree – and in the two years since the election, their choice for their news source follows this pattern as well" (Public Opinion Strategies, 2019).
-
-
-My explanatory variables are race, income, and education. 
-
-The income variable is defined by the median income in 1990. If citizens are above the median, I will code them as "higher income", and if they fall below the median, I will code them as "lower income". 
-
-The educational attainment variable is defined by the proportion of the population that has a college degree in 1990. If citizens do not have a college degree in 1990, I will code them as "lower education", and if they have a college degree, I will code them as "higher education". One important thing to note is that not all eligible voters will have had the opportunity to go to college (an 18 year old can vote, but is still high school age, and may still plan on attending and graduating college).
-
-My last explanatory variable is race. We are limited in part by this data set in that only two racial groups are identified. The black1990 variable is the proportion of the population that was Black in 1990. Similarly, the hisp1990 is the proportion of the population that was Hispanic in 1990. 
-
-
-My outcome variable of interest is subscription to Fox News Media. This is directly defined in our data set as subrf2000: the
-Share of Fox News subscribers in 2000. This is measured using Fox News data from 2000.
-
-
-An observed pattern in the data that would provide support for my hypothesis is that Black and Hispanic populations subscribe to Fox News Media in varying levels, indicating that subscription does vary by race. If there is no difference in subscription levels across race, my hypothesis would be incorrect. Secondly, if citizens with lower education subscribe to Fox News with more frequency than citizens with higher education, my hypothesis would be correct. If the reverse is true, or if there is no correlation at all, I would be incorrect. Lastly, I do not think there will be a correlation on the basis of income-- I am eager to see if I am incorrect, though (I definitely think it is possible that income levels may impact subscription, as income is often a tight correlate with education). The second part of my project will connect these demographic findings to conspiracy theories. I plan to locate another data set that I can merge into this one to discover whether or not Fox News Subscription can impact conspiracy theory belief, and in turn, can draw conclusions about what demographics are most susceptible to these theories. 
-
-
-
-Final Project Milestone #3: 
-
-```{r}
-
-
-library(tidyverse)
-library(ggplot2)
-fox <- read_csv("/Users/carolynburger/Desktop/Gov 50 Final Project /foxnews.csv")
-
-scatterplot1 <- fox |>
-  mutate(
-Education = if_else(college1990 > .5,"High Education Population", "Low Education Population")) |>
-  group_by(income1990, college1990) |>
-  ggplot(mapping = aes(x = income1990, y = subrf2000, color = college1990)) + geom_point(mapping = aes(color = Education)) + labs(
-    x = "Median Income in 1990", 
-    y = "Share of Fox News Subscribers in 2000", title = "Share of Fox News Subscribers on the Basis of Income and Education"
-  )
-scatterplot1
-  
-  
-  
-
-```
-
-
-
-
-
-
-```{r}
 library(tidyverse)
 wb <- read_csv("Data/wb.csv")
+
 ```
+
+
 ```{r}
 library(reshape2)
 wb<- wb |>
@@ -106,7 +36,6 @@ scatterplot2 <- wb |>
     y = "CO2 emissions (kg per 2015 US$ of GDP)", title = "Relationship between Educational Attainment and Government Effectiveness on C02 Emissions, U.S.A"
   )
 scatterplot2
-
 
 
 ```
@@ -276,4 +205,37 @@ modelsummary::modelsummary(
 
   
 ```
-None of these results are statistically significant. I have a larger p value here, which may be a result of having fewer observations. The estimation is not precise because we have fewer observations: we only have 10 years of data/10 observations. 
+None of these results are statistically significant. I have a larger p value here, which may be a result of having fewer observations. The estimation is not precise because we have fewer observations: we only have 10 years of data/10 observations.
+
+
+```{r}
+
+sc_3 <- wb |>
+  select(Gov, Emission) |>
+  drop_na() |> 
+  ggplot(mapping = aes(x = Gov, y = Emission)) + geom_point() + labs(
+    x = "Government Effectiveness", 
+    y = "CO2 emissions (kg per 2015 US$ of GDP)",
+    title = "Relationship between Government Effectiveness and C02 Emission Levels") + geom_smooth(method = "lm", SE = FALSE)
+
+sc_3
+
+```
+
+
+```{r}
+wb_nas <- wb |>
+  select(Emission, Gov, Education, Pop, Pop_growth, Gdp,) |>
+  drop_na() 
+
+
+cor(wb_nas$Emission, wb_nas$Gov)
+
+library(ggcorrplot)
+
+ggcorrplot(cor(wb_nas[,c("Emission", "Gov", "Education", "Pop", "Pop_growth", "Gdp")], 
+           use = "complete.obs"), 
+type = "lower", lab = TRUE)
+```
+
+
