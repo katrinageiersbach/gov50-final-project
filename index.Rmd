@@ -168,7 +168,7 @@ Multivariate regression here:
  -7.714e-15: The average decrease in C02 Emissions for each additional unit increase in GDP, holding educational attainment (population 25+), government effectiveness, and population growth constant, is -7.714e-15 kg per 2015 US$ of GDP.  This result is not statistically significant. 
 
 
-## Regression #3: Testing the Relationship between Emissions and Government Effectiveness, Holding Education, Population Growth, and GDP Constant; does this relationship hold over time in the United States? 
+## Regression #3: Testing the Relationship between Emissions and Government Effectiveness, Holding Education, Population Growth, and GDP Constant; Does this relationship hold over time in the United States? 
 
 ```{r}
 wb_usa <- wb |>
@@ -207,7 +207,7 @@ modelsummary::modelsummary(
 ```
 None of these results are statistically significant. I have a larger p value here, which may be a result of having fewer observations. The estimation is not precise because we have fewer observations: we only have 10 years of data/10 observations.
 
-
+##Scatterplot Visualization of the Primary Outcome Variable and Independent Variable at hand, with a Regression Line plotted:
 ```{r}
 
 sc_3 <- wb |>
@@ -222,7 +222,7 @@ sc_3
 
 ```
 
-
+##Correlation of the Main Outcome Variable and Independent Variable at hand, and Correlation Plot between Other Potential Confounders:
 ```{r}
 wb_nas <- wb |>
   select(Emission, Gov, Education, Pop, Pop_growth, Gdp,) |>
