@@ -94,7 +94,7 @@ scatterplot2
 summary_dep <- wb |>
   select(Emission) |>
   drop_na() |>
-  summary(Emission) 
+  summary(Emission, digits = 1) 
 
 knitr::kable(summary_dep, col.names = "Summary of Emissions Variable", digits = 2)
 
@@ -139,7 +139,7 @@ sc_3
 
 mult.fit <- lm(Emission ~ Gov + Education, data = wb)
 mult.fit
-summary(mult.fit, digits = 2)
+summary(mult.fit, digits = 1)
 
 ```
 ```{r}
@@ -161,7 +161,7 @@ map = c(
 )
 
 modelsummary::modelsummary(
-  mult.fit, digits = 2,
+  mult.fit, fmt = 2,
   coef_map = map,
   statistic = c("s.e. = {std.error}",
                 "p = {p.value}"),
@@ -186,7 +186,7 @@ When looking at these results, it is important to note that all of the coefficie
 
 mult.fit2 <- lm(Emission ~ Gov + Pop_growth + Education + Gdp, data = wb)
 mult.fit2
-summary(mult.fit2, digits = 2)
+summary(mult.fit2, digits = 1)
 
 ```
 
@@ -212,7 +212,7 @@ map = c(
 )
 
 modelsummary::modelsummary(
-  mult.fit2, digits = 2,
+  mult.fit2, fmt = 2,
   coef_map = map,
   statistic = c("s.e. = {std.error}",
                 "p = {p.value}"),
@@ -267,7 +267,7 @@ map = c(
 )
 
 modelsummary::modelsummary(
-  mult.fit3, digits = 2,
+  mult.fit3, fmt = 2,
   coef_map = map,
   statistic = c("s.e. = {std.error}",
                 "p = {p.value}"),
