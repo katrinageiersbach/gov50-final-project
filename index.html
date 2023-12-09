@@ -1542,7 +1542,7 @@ Scale: [-2.5,2.5]</p>
 Droughts, floods and extreme temperatures is the annual average percentage of the population that is affected by natural disasters classified as either droughts, floods, or extreme temperature events. A drought is an extended period of time characterized by a deficiency in a region’s water supply that is the result of constantly below average precipitation. A drought can lead to losses to agriculture, affect inland navigation and hydropower plants, and cause a lack of drinking water and famine. A flood is a significant rise of water level in a stream, lake, reservoir or coastal region. Extreme temperature events are either cold waves or heat waves. A cold wave can be both a prolonged period of excessively cold weather and the sudden invasion of very cold air over a large area. Along with frost it can cause damage to agriculture, infrastructure, and property. A heat wave is a prolonged period of excessively hot and sometimes also humid weather relative to normal climate patterns of a certain region. Population affected is the number of people injured, left homeless or requiring immediate assistance during a period of emergency resulting from a natural disaster; it can also include displaced or evacuated people. Average percentage of population affected is calculated by dividing the sum of total affected for the period stated by the sum of the annual population figures for the period stated.]</p>
 <p>“Pop_growth”: Population growth (annual %).</p>
 <p>“Pop”: Population, total.</p>
-Loading in tidyverse and the other packages I may need for this project:
+<p>Loading in tidyverse and the other packages I may need for this project:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
@@ -1558,7 +1558,7 @@ Loading in tidyverse and the other packages I may need for this project:
 <span><span class='va'>wb</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"Data/wb.csv"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-Loading in my data and doing some initial data cleaning:
+<p>Loading in my data and doing some initial data cleaning:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/hadley/reshape'>reshape2</a></span><span class='op'>)</span></span>
@@ -1568,7 +1568,7 @@ Loading in my data and doing some initial data cleaning:
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-Milestone 3:Plotting the Relationship Between Educational Attainment and Government Effectiveness on C02 Emissions in the United States
+<p>Milestone 3: Plotting the Relationship Between Educational Attainment and Government Effectiveness on C02 Emissions in the United States</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>scatterplot2</span> <span class='op'>&lt;-</span> <span class='va'>wb</span> <span class='op'>|&gt;</span></span>
@@ -1582,7 +1582,7 @@ Milestone 3:Plotting the Relationship Between Educational Attainment and Governm
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
-Creating a Summary of the Dependent Variable:
+<p>Creating a Summary of the Dependent Variable:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>summary_dep</span> <span class='op'>&lt;-</span> <span class='va'>wb</span> <span class='op'>|&gt;</span></span>
@@ -1648,7 +1648,7 @@ Max. :2.41
 </tbody>
 </table>
 </div>
-Plot of the dependent variable:
+<p>Plot of the dependent variable:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>sc_2</span> <span class='op'>&lt;-</span> <span class='va'>wb</span> <span class='op'>|&gt;</span></span>
@@ -1663,7 +1663,7 @@ Plot of the dependent variable:
 </div>
 <hr />
 <p>Results Section:</p>
-Scatterplot Visualization of the Primary Outcome Variable and Independent Variable at hand, with a Regression Line plotted:
+<p>Scatterplot Visualization of the Primary Outcome Variable and Independent Variable at hand, with a Regression Line plotted:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>sc_3</span> <span class='op'>&lt;-</span> <span class='va'>wb</span> <span class='op'>|&gt;</span></span>
@@ -1678,7 +1678,7 @@ Scatterplot Visualization of the Primary Outcome Variable and Independent Variab
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
-Regression #1 Testing the Relationship between Emissions and Government Effectiveness, Holding Education Constant (controlling for a potential confounder):
+<p>Regression #1 Testing the Relationship between Emissions and Government Effectiveness, Holding Education Constant (controlling for a potential confounder):</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>mult.fit</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>Emission</span> <span class='op'>~</span> <span class='va'>Gov</span> <span class='op'>+</span> <span class='va'>Education</span>, data <span class='op'>=</span> <span class='va'>wb</span><span class='op'>)</span></span>
@@ -1879,7 +1879,7 @@ R2 Adj.
 <p>-.23291: The average decrease in C02 Emissions for an additional unit increase of government effectiveness score, holding educational attainment percentage (age 25+) constant, is -.23291 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level***.</p>
 <p>0.01002: The average increase in C02 Emissions for each additional unit (%) increase in educational attainment (population 25+), holding government effectiveness score constant, is 0.01002 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level***.</p>
 <p>When looking at these results, it is important to note that all of the coefficients are statistically significant at the .05 level. What we do see is that for additional unit increases in government effectiveness, C02 emissions seem to decrease. However, increasing educational attainment by one percentage point seems to increase C02 emissions. Although we controlled for a potential confounder, there are others that I did not control for (distance to equator, urbanization levels, involvement in climate accords, etc). These are all variables that could potentially impact C02 emissions, other than Government effectiveness levels. Therefore, we cannot interpret these results causally because we cannot be certain that the ONLY variable impacting C02 Emissions is Government Effectiveness. The fundamental problem of causal inference is certainly at play here: we can never observe counterfactuals, they must be inferred. All we get to observe is the factual. My “null hypothesis” in this case would be that there is no relationship between government effectiveness and C02 Emissions. So, given that these results are all statistically significant (p value &lt; .05), we can reject the null hypothesis that there is no relationship between government effectiveness and C02 emissions (because there is less than a 5% chance of a result as extreme as the sample result if the null hypothesis were true). However, we still cannot determine causality due to confounders, and the fact that my research design was not a random experiment that could have combated confounding. It was a cross sectional design that did not utilize randomization.</p>
-Regression #2 Testing the Relationship between Emissions and Government Effectiveness, Holding Educational Attainment, Population Growth, and GDP Constant (controlling for these confounders):
+<p>Regression #2 Testing the Relationship between Emissions and Government Effectiveness, Holding Educational Attainment, Population Growth, and GDP Constant (controlling for these confounders):</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>mult.fit2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>Emission</span> <span class='op'>~</span> <span class='va'>Gov</span> <span class='op'>+</span> <span class='va'>Pop_growth</span> <span class='op'>+</span> <span class='va'>Education</span> <span class='op'>+</span> <span class='va'>Gdp</span>, data <span class='op'>=</span> <span class='va'>wb</span><span class='op'>)</span></span>
@@ -2386,7 +2386,7 @@ R2 Adj.
 </table>
 </div>
 <p>Unfortunately, none of these results are statistically significant at the .05 level. I have much larger p values here (assuming our confidence interval is 95%, any p values above .05 are not statistically significant), which may be a result of having fewer observations. The estimation is not precise because we have fewer observations: we only have 9 years of data, or 9 observations, and we are just looking at one country: the United States.</p>
-Next, let’s take a look at some correlations that summarize our main relationship of interest. Correlation of the Main Outcome Variable and Independent Variable at hand, and Correlation Plot between Other Potential Confounders:
+<p>Next, let’s take a look at some correlations that summarize our main relationship of interest. Correlation of the Main Outcome Variable and Independent Variable at hand, and Correlation Plot between Other Potential Confounders:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>wb_nas</span> <span class='op'>&lt;-</span> <span class='va'>wb</span> <span class='op'>|&gt;</span></span>
@@ -2414,7 +2414,7 @@ Correlation between Government Effectiveness and C02 Emissions
 </tbody>
 </table>
 </div>
-Correlation plot visualizing correlations between independent and dependent variables (using a package not used in class):
+<p>Correlation plot visualizing correlations between independent and dependent variables (using a package not used in class):</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>corplot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggcorrplot/man/ggcorrplot.html'>ggcorrplot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cor</a></span><span class='op'>(</span><span class='va'>wb_nas</span><span class='op'>[</span>,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Emission"</span>, <span class='st'>"Gov"</span>, <span class='st'>"Education"</span>, <span class='st'>"Pop"</span>, <span class='st'>"Pop_growth"</span>, <span class='st'>"Gdp"</span><span class='op'>)</span><span class='op'>]</span>, </span>
