@@ -12,42 +12,43 @@ output:
 
 Introduction Section:
 
-This semester, I investigated the extent to which Government Effectiveness (that is, perceptions of the quality of public services, the quality of the civil service and the degree of its independence from political pressures, the quality of policy formulation and implementation, and the credibility of the government's commitment to such policies), impacted C02 emissions. Ultimately, after many rounds of changed research and data sets, I decided I’m interested in exploring whether or not the perceived effectiveness of a particular government institution may impact how climate conscious a particular country is, and therefore how C02 emissions may vary. In order to gather my data in a creative manner, I leveraged the World Bank Open database. I knew I was interested in analyzing the relationship between Government Effectiveness and C02 emissions. So, upon building my data set, I merged data with a wide assortment of variables that might be potential confounders in my primary relationship of interest. I want to control for several potential confounders. Aside from government effectiveness, I believe that population growth, educational attainment levels, and GDP may all be factors that could impact C02 emissions, regardless of government effectiveness level. I hypothesize that population growth might lead to increased vehicle use, and therefore more C02 emissions; higher educational attainment may yield more educated conservation practices to limit carbon footprints; and GDP may impact the ability of a particular government to invest in climate conscious, renewable, or sustainable energy alternatives. 
+This semester, I investigated the extent to which Government Effectiveness (that is, perceptions of the quality of public services, the quality of the civil service and the degree of its independence from political pressures, the quality of policy formulation and implementation, and the credibility of the government's commitment to such policies), impacts C02 emissions. In other words, I’m interested in exploring whether or not the effectiveness of a particular government may impact how climate conscious a particular country is, and therefore their C02 emission levels. In order to gather my data, I leveraged the World Bank Open database. I knew I was interested in analyzing the relationship between Government Effectiveness and C02 emissions. So, upon building my data set, I merged a wide assortment of variables that might be potential confounders in my primary relationship of interest. Aside from government effectiveness, I believe that population growth, educational attainment levels, and GDP may all be factors that could impact C02 emissions, regardless of government effectiveness level. I hypothesize that population growth might lead to increased vehicle use, and therefore heightened C02 emissions; higher educational attainment may yield more educated conservation practices to limit carbon footprints; and GDP may impact the ability of a particular government to invest in climate conscious, renewable, or sustainable energy alternatives. 
 
-This research proposal is interesting given the current climate crisis. The United States has had a varying level of commitment to climate change initiatives with changing Administrations recently; most notably, our removal and reentry into the Paris Climate Accord. Therefore, I am interested to see if particular countries with better public services and perception of government effectiveness are perhaps more equipped to deal with, and cognizant of, C02 emissions, thus impacting their emission levels.
+This research proposal is interesting given the current climate crisis. The United States has had a varying level of commitment to climate change initiatives with changing Administrations recently; most notably, our removal and reentry into the Paris Climate Accord. Do countries with high government effectiveness have lower emissions? Or, do countries with low government effectiveness have lower emissions? This will be a key finding as the world comes together to fight our warming Earth.
 
-My initial hypothesis is that Government effectiveness does not impact C02 emissions. I hypothesize that Government effectiveness only impacts C02 emissions when the party/political leader in power makes a cognizant effort to take action on Climate Change. In countries like the United States, the party in power changes quite frequently, making it difficult to sustain any changes to C02 emissions over time, though perceived government “effectiveness” might remain relatively stable over time. Take China as a case study. China has a very effective government that is able to command its people and exercise extreme control. My guess is that China has a high government effectiveness score. Yet, China has the highest C02 emissions in the world. What really matters is how progressive the government in question is. Not how effective they are, across a wide variety of measures like quality of public services, degree of its independence from political pressures, etc. 
+My initial hypothesis is that Government effectiveness does not impact C02 emissions. I hypothesize that Government effectiveness only impacts C02 emissions when the party/political leader in power makes a cognizant effort to take action on Climate Change. In countries like the United States, the party in power changes quite frequently, making it difficult to sustain any changes to C02 emissions over time, though perceived government “effectiveness” might remain relatively stable over time. Additionally, China leads me to believe that higher government effectiveness may not necessarily yield lower carbon emissions. I hypothesize that China has a very effective government score due to its high policy formulation and implementation, and public and civil services. Yet, China has the highest C02 emissions in the world. So, my hypothesis is that what really matters is how progressive the government in question is. Not how effective they are, across a wide variety of measures like quality of public services, degree of its independence from political pressures, etc. 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 Data Section: 
 
-Source: The source of my data is the MetaGlossary World Bank Data, compiled over the span of 9 years from 2013 to 2022. This is a cross sectional data research design.
+Source: The source of my data is the MetaGlossary World Bank Data, compiled over the span of 9 years from 2013 to 2022. This is a cross sectional data research design. The World Bank collects much of its data from from the statistical systems of member countries. 
 
 Key variables definitions and scales/units: 
 
-Emissions (Dependent Variable): CO2 emissions (kg per 2015 US$ of GDP)
-Scale: Carbon dioxide emissions are those stemming from the burning of fossil fuels and the manufacture of cement. They include carbon dioxide produced during consumption of solid, liquid, and gas fuels and gas flaring.
+"Emissions" (Dependent Variable): CO2 emissions; measured in kg per 2015 US$ of GDP.
+[Scale: Carbon dioxide emissions are those stemming from the burning of fossil fuels and the manufacture of cement. They include carbon dioxide produced during consumption of solid, liquid, and gas fuels and gas flaring.]
 
 Independent Variables:
-GDP: GDP (constant 2015 US$)
-Scale: GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2015 prices, expressed in U.S. dollars. Dollar figures for GDP are converted from domestic currencies using 2015 official exchange rates. For a few countries where the official exchange rate does not reflect the rate effectively applied to actual foreign exchange transactions, an alternative conversion factor is used.
 
-Education: Educational attainment, at least completed short-cycle tertiary, population 25+, total (%) (cumulative)
-Scale: Statistical concept and methodology	It is calculated by dividing the number of population ages 25 and older who attained or completed short-cycle tertiary education by the total population of the same age group and multiplying by 100. 
+"GDP": GDP; measured in constant 2015 US$.
+[Scale: GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2015 prices, expressed in U.S. dollars. Dollar figures for GDP are converted from domestic currencies using 2015 official exchange rates. For a few countries where the official exchange rate does not reflect the rate effectively applied to actual foreign exchange transactions, an alternative conversion factor is used.]
 
-Gov: Government Effectiveness: Estimate (Government Effectiveness captures perceptions of the quality of public services, the quality of the civil service and the degree of its independence from political pressures, the quality of policy formulation and implementation, and the credibility of the government's commitment to such policies)
+"Education": Educational attainment, at least completed short-cycle tertiary, population 25+, total (%) (cumulative).
+[Scale: Statistical concept and methodology	It is calculated by dividing the number of population ages 25 and older who attained or completed short-cycle tertiary education by the total population of the same age group and multiplying by 100.]
+
+"Gov": Government Effectiveness: Government Effectiveness captures perceptions of the quality of public services, the quality of the civil service and the degree of its independence from political pressures, the quality of policy formulation and implementation, and the credibility of the government's commitment to such policies.
 Scale: [-2.5,2.5]
 
-Climate: Droughts, floods, extreme temperatures (% of population, average 1990-2009)
-Scale: 	Droughts, floods, extreme temperatures (% of population, average 1990-2009)
-Droughts, floods and extreme temperatures is the annual average percentage of the population that is affected by natural disasters classified as either droughts, floods, or extreme temperature events. A drought is an extended period of time characterized by a deficiency in a region's water supply that is the result of constantly below average precipitation. A drought can lead to losses to agriculture, affect inland navigation and hydropower plants, and cause a lack of drinking water and famine. A flood is a significant rise of water level in a stream, lake, reservoir or coastal region. Extreme temperature events are either cold waves or heat waves. A cold wave can be both a prolonged period of excessively cold weather and the sudden invasion of very cold air over a large area. Along with frost it can cause damage to agriculture, infrastructure, and property. A heat wave is a prolonged period of excessively hot and sometimes also humid weather relative to normal climate patterns of a certain region. Population affected is the number of people injured, left homeless or requiring immediate assistance during a period of emergency resulting from a natural disaster; it can also include displaced or evacuated people. Average percentage of population affected is calculated by dividing the sum of total affected for the period stated by the sum of the annual population figures for the period stated.
+"Climate": Droughts, floods, extreme temperatures (% of population, average 1990-2009).
+[Scale: 	Droughts, floods, extreme temperatures (% of population, average 1990-2009)
+Droughts, floods and extreme temperatures is the annual average percentage of the population that is affected by natural disasters classified as either droughts, floods, or extreme temperature events. A drought is an extended period of time characterized by a deficiency in a region's water supply that is the result of constantly below average precipitation. A drought can lead to losses to agriculture, affect inland navigation and hydropower plants, and cause a lack of drinking water and famine. A flood is a significant rise of water level in a stream, lake, reservoir or coastal region. Extreme temperature events are either cold waves or heat waves. A cold wave can be both a prolonged period of excessively cold weather and the sudden invasion of very cold air over a large area. Along with frost it can cause damage to agriculture, infrastructure, and property. A heat wave is a prolonged period of excessively hot and sometimes also humid weather relative to normal climate patterns of a certain region. Population affected is the number of people injured, left homeless or requiring immediate assistance during a period of emergency resulting from a natural disaster; it can also include displaced or evacuated people. Average percentage of population affected is calculated by dividing the sum of total affected for the period stated by the sum of the annual population figures for the period stated.]
 
-Pop_growth: Population growth (annual %)
+"Pop_growth": Population growth (annual %).
 
-Pop: Population, total
+"Pop": Population, total.
 
-##Loading in tidyverse and the other packages I may need for this project
+Loading in tidyverse and the other packages I may need for this project:
 ```{r}
 
 library(tidyverse)
@@ -64,7 +65,7 @@ wb <- read_csv("Data/wb.csv")
 
 ```
 
-##Loading in my data and doing some data cleaning:
+Loading in my data and doing some initial data cleaning:
 ```{r}
 library(reshape2)
 wb<- wb |>
@@ -74,7 +75,7 @@ wb<- wb |>
 
 ```
 
-##Milestone 3: Plotting the Relationship Between Educational Attainment and Government Effectiveness on C02 Emissions in the United States
+Milestone 3:Plotting the Relationship Between Educational Attainment and Government Effectiveness on C02 Emissions in the United States
 ```{r}
 
 scatterplot2 <- wb |>
@@ -88,7 +89,7 @@ scatterplot2
 
 
 ```
-##Creating a Summary of the Dependent Variable: 
+Creating a Summary of the Dependent Variable: 
 ```{r}
 
 summary_dep <- wb |>
@@ -100,7 +101,7 @@ knitr::kable(summary_dep, col.names = "Summary of Emissions Variable", digits = 
 
 ```
 
-##Plot of the dependent variable:
+Plot of the dependent variable:
 ```{r}
 sc_2 <- wb |>
   select(Emission) |>
@@ -117,8 +118,7 @@ sc_2
 Results Section: 
 
 
-##Scatterplot Visualization of the Primary Outcome Variable and Independent Variable at hand, with a Regression Line plotted:
-
+Scatterplot Visualization of the Primary Outcome Variable and Independent Variable at hand, with a Regression Line plotted:
 ```{r}
 
 sc_3 <- wb |>
@@ -133,8 +133,7 @@ sc_3
 
 ```
 
-## Regression #1 Testing the Relationship between Emissions and Government Effectiveness, Holding Education Constant (controlling for a potential confounder):
-
+Regression #1 Testing the Relationship between Emissions and Government Effectiveness, Holding Education Constant (controlling for a potential confounder):
 ```{r}
 
 mult.fit <- lm(Emission ~ Gov + Education, data = wb)
@@ -172,16 +171,16 @@ modelsummary::modelsummary(
 
 Interpretation of Coefficients: 
 
-.26710: The average CO2 emissions with 0% educational attainment (population 25+) and an effective government score of 0, is .26710 kg per 2015 US$ of GDP. This result is statistically significant***. 
+.26710: The average CO2 emission with 0% educational attainment (population 25+) and an effective government score of 0, is .26710 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level***. 
 
--.23291: The average decrease in C02 Emissions for an additional unit increase of government effectiveness, holding educational attainment percentage (age 25+) constant, is -.23291 kg per 2015 US$ of GDP. This result is statistically significant***. 
+-.23291: The average decrease in C02 Emissions for an additional unit increase of government effectiveness score, holding educational attainment percentage (age 25+) constant, is -.23291 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level***. 
 
-0.01002: The average increase in C02 Emissions for each additional unit (%) increase in educational attainment (population 25+), holding government effectiveness level constant, is 0.01002 kg per 2015 US$ of GDP. This result is statistically significant***. 
+0.01002: The average increase in C02 Emissions for each additional unit (%) increase in educational attainment (population 25+), holding government effectiveness score constant, is 0.01002 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level***. 
 
-When looking at these results, it is important to note that all of the coefficients are statistically significant. What we do see is that for additional unit increases in government effectiveness, C02 emissions seem to decrease. However, increasing educational attainment by one percentage point seems to increase C02 emissions. Although we controlled for a potential confounder, there are others that I did not control for (distance to equator, urbanization levels, involvement in climate accords, etc). These are all variables that could potentially impact C02 emissions, other than Government effectiveness levels. Therefore, we cannot interpret these results causally because we cannot be certain that the ONLY variable impacting C02 Emissions is Government Effectiveness. The fundamental problem of causal inference is certainly at play here: we can never observe counterfactuals, they must be inferred. All we get to observe is the factual. My "null hypothesis" in this case would be that there is no relationship between government effectiveness and C02 Emissions. So, given that these results are all statistically significant (p value < .05), we can reject the null hypothesis that there is no relationship (because there is less than a 5% chance of a result as extreme as the sample result if the null hypothesis were true). However, we still cannot determine causality due to confounders (my research design was not a random experiment that could have combated confounding).
+When looking at these results, it is important to note that all of the coefficients are statistically significant at the .05 level. What we do see is that for additional unit increases in government effectiveness, C02 emissions seem to decrease. However, increasing educational attainment by one percentage point seems to increase C02 emissions. Although we controlled for a potential confounder, there are others that I did not control for (distance to equator, urbanization levels, involvement in climate accords, etc). These are all variables that could potentially impact C02 emissions, other than Government effectiveness levels. Therefore, we cannot interpret these results causally because we cannot be certain that the ONLY variable impacting C02 Emissions is Government Effectiveness. The fundamental problem of causal inference is certainly at play here: we can never observe counterfactuals, they must be inferred. All we get to observe is the factual. My "null hypothesis" in this case would be that there is no relationship between government effectiveness and C02 Emissions. So, given that these results are all statistically significant (p value < .05), we can reject the null hypothesis that there is no relationship between government effectiveness and C02 emissions (because there is less than a 5% chance of a result as extreme as the sample result if the null hypothesis were true). However, we still cannot determine causality due to confounders, and the fact that my research design was not a random experiment that could have combated confounding. It was a cross sectional design that did not utilize randomization. 
 
 
-## Regression #2 Testing the Relationship between Emissions and Government Effectiveness, Holding Educational Attainment, Population Growth, and GDP Constant (controlling for these confounders):
+Regression #2 Testing the Relationship between Emissions and Government Effectiveness, Holding Educational Attainment, Population Growth, and GDP Constant (controlling for these confounders):
 ```{r}
 
 mult.fit2 <- lm(Emission ~ Gov + Pop_growth + Education + Gdp, data = wb)
@@ -220,22 +219,21 @@ modelsummary::modelsummary(
 )
 ```
 
-
 Interpretation of Coefficients:
 
-3.263e-01: Average CO2 emissions with 0% educational attainment (population 25+), an effective government score of 0, population growth of 0, and a GDP of 0 in 2015, is 3.263e-01 kg per 2015 US$ of GDP. This result is statistically significant***. 
+3.263e-01: The average CO2 emission with 0% educational attainment (population 25+), an effective government score of 0, population growth of 0, and a GDP of 0 in 2015, is 3.263e-01 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level***. 
  
- -2.442e-01: The average decrease in C02 Emissions for an additional unit increase of government effectiveness, holding educational attainment (age 25+) level, population growth, and GDP constant, is -2.442e-01 kg per 2015 US$ of GDP. This result is statistically significant***. 
+ -2.442e-01: The average decrease in C02 Emissions for an additional unit increase of government effectiveness score, holding educational attainment (age 25+) % level, population growth, and GDP constant, is -2.442e-01 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level***. 
  
- -5.195e-02: The average decrease in C02 Emissions for each additional unit increase in population growth percentage, holding educational attainment (population 25+), government effectiveness, and GDP constant, is -5.195e-02 kg per 2015 US$ of GDP. This result is statistically significant***.   
+ -5.195e-02: The average decrease in C02 Emissions for each additional unit increase in population growth percentage, holding educational attainment (population 25+) %, government effectiveness score, and GDP constant, is -5.195e-02 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level***.   
  
- 9.944e-03: The average increase in C02 Emissions for each additional unit increase in educational attainment (population 25+), holding government effectiveness, population growth, and GDP constant, is 9.944e-03 kg per 2015 US$ of GDP.  This result is statistically significant***. 
+ 9.944e-03: The average increase in C02 Emissions for each additional unit increase in educational attainment percentage (population 25+), holding government effectiveness score, population growth, and GDP constant, is 9.944e-03 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level***. 
  
- -7.714e-15: The average decrease in C02 Emissions for each additional unit increase in GDP, holding educational attainment (population 25+), government effectiveness, and population growth constant, is -7.714e-15 kg per 2015 US$ of GDP.  This result is not statistically significant. 
+ -7.714e-15: The average decrease in C02 Emissions for each additional unit increase in GDP, holding educational attainment (population 25+) percentage, government effectiveness score, and population growth constant, is -7.714e-15 kg per 2015 US$ of GDP. This result is not statistically significant at the .05 level. 
 
-When looking at these results, it is important to note that not all of the coefficients are statistically significant. What we do see is that for additional unit increases in government effectiveness, C02 emissions seem to decrease. For each unit increase in population growth, C02 emissions seem to decrease. For each additional percentage point increase in educational attainment, C02 emissions seem to increase. Lastly, for each additional unit ($) increase in GDP, C02 emissions seem to decrease. Although we controlled for some potential confounders, there are others that I still did not control for (distance to equator, urbanization levels, involvement in climate accords, etc). These are all variables that could potentially impact C02 emissions, other than Government effectiveness levels. Therefore, we cannot interpret these results causally because we cannot be certain that the ONLY variable impacting C02 Emissions is Government Effectiveness, and our research design was cross sectional and not a randomized experiment that would allow us to interpret causality. Once again, the fundamental problem of causal inference is certainly at play here: we can never observe counterfactuals, they must be inferred. All we get to observe is the factual. This regression is more robust than the first regression I ran, because it is multivariate and controls for several variables/potential confounders. Yet, we still cannot establish causality: my experiment was not randomized to combat confounding. 
+When looking at these results, it is important to note that not all of the coefficients are statistically significant at the .05 level. What we do see is that for additional unit increase in government effectiveness score, C02 emissions seem to decrease. For each unit increase in population growth, C02 emissions seem to decrease. For each additional percentage point increase in educational attainment, C02 emissions seem to increase. Lastly, for each additional unit ($) increase in GDP, C02 emissions seem to decrease. Although we controlled for some potential confounders, there are others that I still did not control for (distance to equator, urbanization levels, involvement in climate accords, etc). These are all variables that could potentially impact C02 emissions, other than Government effectiveness levels. Therefore, we cannot interpret these results causally because we cannot be certain that the ONLY variable impacting C02 Emissions is Government Effectiveness, and our research design was cross sectional and not a randomized experiment that would allow us to interpret causality. Once again, the fundamental problem of causal inference is certainly at play here: we can never observe counterfactuals, they must be inferred. All we get to observe is the factual. This regression is more robust than the first regression I ran, because it is multivariate and controls for several variables/potential confounders. Yet, we still cannot establish causality: my experiment was not randomized to combat confounding. 
 
-## Regression #3: Testing the Relationship between Emissions and Government Effectiveness, Holding Education, Population Growth, and GDP Constant; What does this relationship look like in the United States?
+Regression #3: Testing the Relationship between Emissions and Government Effectiveness, Holding Education, Population Growth, and GDP Constant; What does this relationship look like in just the United States?
 
 ```{r}
 wb_usa <- wb |>
@@ -275,9 +273,9 @@ modelsummary::modelsummary(
 )
 ```
 
-Unfortunately, none of these results are statistically significant. I have much larger p values here (assuming our confidence interval is 95%, any p values above .05), which may be a result of having fewer observations. The estimation is not precise because we have fewer observations: we only have 9 years of data, or 9 observations. 
+Unfortunately, none of these results are statistically significant at the .05 level. I have much larger p values here (assuming our confidence interval is 95%, any p values above .05 are not statistically significant), which may be a result of having fewer observations. The estimation is not precise because we have fewer observations: we only have 9 years of data, or 9 observations, and we are just looking at one country: the United States. 
 
-##Correlation of the Main Outcome Variable and Independent Variable at hand, and Correlation Plot between Other Potential Confounders:
+Next, let's take a look at some correlations that summarize our main relationship of interest. Correlation of the Main Outcome Variable and Independent Variable at hand, and Correlation Plot between Other Potential Confounders:
 ```{r}
 wb_nas <- wb |>
   select(Emission, Gov, Education, Pop, Pop_growth, Gdp,) |>
@@ -289,19 +287,18 @@ knitr::kable(cor_outcome, col.names = "Correlation between Government Effectiven
 
 ```
 
-##Correlation plot visualizing correlations between independent and dependent variables:
+Correlation plot visualizing correlations between independent and dependent variables (using a package not used in class):
 ```{r}
 corplot <- ggcorrplot(cor(wb_nas[,c("Emission", "Gov", "Education", "Pop", "Pop_growth", "Gdp")], 
            use = "complete.obs"), 
 type = "lower", lab = TRUE)
 corplot
 ```
-
 Above you can see a correlation plot that summarizes my independent and dependent variables in relation to one another. 
-What is most interesting to me is the correlation between Emissions (my dependent variable), and my main independent variable, Government Effectiveness. The correlation between these two variables is -0.4605047, which indicates that there is a fairly strong negative correlation between C02 Emissions and Government Effectiveness; when Government Effectiveness is higher, C02 emissions are smaller; or the converse; if Government Effectiveness is Low, then C02 emissions are higher. These two variables move in opposite directions of one another. This is very surprising to me, though my regressions that control for confounding, reflect the same result.
+What is most interesting to me is the correlation between Emissions (my dependent variable), and my main independent variable, Government Effectiveness. The correlation between these two variables is -0.4605047, which indicates that there is a fairly strong negative correlation between C02 Emissions and Government Effectiveness; when Government Effectiveness is higher, C02 emissions are lower; or the converse; if Government Effectiveness is Low, then C02 emissions are higher. These two variables move in opposite directions of one another. This is not particularly surprising to me, and my regressions that control for confounding reflect the same result. This does not entirely support my hypothesis, though. I'd need more information about how progressive a particular government is to prove my own hypothesis (I thought that government effectiveness would have no relationship to C02 emissions, and that only the progressive/climate activist state of a government would matter). Ultimately, I thought there would be no relationship between government effectiveness and C02 emissions. However, this correlation, and my regression reveal that there is a negative relationship between these two variables. We cannot determine causality, but we can see that these two variables do move in opposite directions of one another. My guess is that most readers may suspect that the higher a government's efffectiveness score, the lower their C02 emissions, and this was the case. 
 
 
 --------------------------------------------------------------------------------------------------------------------------------
 Conclusion: 
 
-The most interesting result from our regressions is the one that controls for as many confounders as possible. The relationship I found between governmental effectiveness and C02 emissions was negative: the average decrease in C02 Emissions for an additional unit increase of government effectiveness, holding educational attainment % (age 25+) level, population growth, and GDP constant, is -2.442e-01 kg per 2015 US$ of GDP. This result is statistically significant, as our p value is less than 0.001. However, as I've mentioned, we cannot establish causality because there are other potential confounders, and my research design was not randomized. Other things that could impact C02 Emissions, outside of Government effectiveness may include: industrialization/urbanization level, proximity to water/ocean, forests (deforestation can lead to a lot of C02 emissions); involvement in Paris Climate Accord/UN, etc. Yes, we found a negative relationship and a negative correlation between these two variables (gov effectiveness and C02 emissions). However, there are limitations to my design. For one, I only have 9 years of data. The simplest way to improve my design would be adding in some more variables and confounders, or even conducting some sort of randomized control trial/experiment instead of using a cross sectional research design. Randomization can allow us to interpret results causally. I also dropped missing data from our data set, which contribute to holes in our analysis. Missing data reduces the representativeness of the sample and can incorrectly skew inferences we make about the population at hand. Also, using data from a wider time frame would increase the robustness of our inferences/analyses. 
+The most interesting result from our regressions is the one that controls for as many confounders as possible. The relationship I found between governmental effectiveness and C02 emissions was negative: the average decrease in C02 Emissions for an additional unit increase of government effectiveness, holding educational attainment % (age 25+) level, population growth, and GDP constant, is -2.442e-01 kg per 2015 US$ of GDP. This result is statistically significant at the .05 level, as our p value is less than 0.05. However, as I've mentioned, we cannot establish causality because there are other potential confounders, and my research design was not randomized. Other things that could impact C02 Emissions, outside of Government effectiveness may include: industrialization/urbanization level, proximity to water/ocean, forests (deforestation can lead to a lot of C02 emissions); involvement in Paris Climate Accord/UN, etc. Yes, we found a negative relationship and a negative correlation between these two variables (gov effectiveness and C02 emissions). However, there are limitations to my design. For one, I only have 9 years of data. The simplest way to improve my design would be adding in some more variables and confounders, or even conducting some sort of randomized control trial/experiment instead of using a cross sectional research design. Randomization can allow us to interpret results causally. I also dropped missing data from our data set, which contribute to holes in our analysis. Missing data reduces the representativeness of the sample and can incorrectly skew inferences we make about the population at hand. Also, using data from a wider time frame would increase the robustness of our inferences/analyses. Ultimately, this project was very interesting, and contradicted some of my initial hypotheses, which was cool to see. In the future, with more time and money, I would like to conduct this same analysis, but adding in another dimension about how climate conscious countries are. Perhaps the World Bank could run a survey or utilize more of their statistical databases already in place (to analyze climate policies, or lack thereof, from countries) to collect this data, or develop a scale that analyzes this very dimension. Does a climate conscious government override the negative relationship between government effectiveness and C02 emissions? 
